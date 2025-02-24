@@ -1,4 +1,5 @@
 import express from "express";
+import { userCollection } from "../db/dbCollection.js";
 
 const userRouter = express.Router();
 

@@ -7,10 +7,7 @@ const taskRouter = express.Router();
 taskRouter.get("/:userID", async (req, res) => {
   const { userID } = req.params;
   try {
-    const result = await taskCollection
-      .find({ userID })
-      .sort({ order: 1 })
-      .toArray();
+    const result = await taskCollection.find({ userID }).toArray();
     return res.send(result);
   } catch (err) {
     console.log("Error Fetching Tasks");
